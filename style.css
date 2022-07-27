@@ -14,7 +14,7 @@ pre {
 
 header {
   grid-template-columns: 2em auto min-content;
-  padding: 0 1em 0 0;
+  padding: 0;
   height: 3em;
   width: 100vw;
   display: grid;
