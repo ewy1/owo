@@ -2,12 +2,11 @@
 $config = require("./config.php");
 
 $target = $_SERVER["REQUEST_URI"];
+
 if ($target !== "/")
-  $contents = file_get_contents($config->pastePath . substr($target, 1));
-else
-  $contents = "curl -X POST -H 'Content-Type: application/json'
-    -d '{\"payload\": \"your text goes here\", \"base64\": false}'"
-    .$config->host."new | jq -r \".target\"";
+  $target = $config->pastePath."example";
+
+$contents = file_get_contents($config->pastePath . substr($target, 1));
 ?>
 <!doctype html>
 <html lang="">
