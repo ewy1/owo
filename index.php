@@ -4,7 +4,7 @@ $config = require("./config.php");
 $target = $_SERVER["REQUEST_URI"];
 
 if ($target !== "/")
-  $target = $config->pastePath."example";
+  $target = "/example";
 
 $contents = file_get_contents($config->pastePath . substr($target, 1));
 ?>
