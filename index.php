@@ -6,8 +6,8 @@ if ($target !== "/")
   $contents = file_get_contents($config->pastePath . substr($target, 1));
 else
   $contents = "curl -X POST -H 'Content-Type: application/json'
-    -d '{\"payload\": \"your text goes here\", \"base64\": false}'
-    https://".$config->host."new";
+    -d '{\"payload\": \"your text goes here\", \"base64\": false}'"
+    .$config->host."new | jq -r \".target\"";
 ?>
 <!doctype html>
 <html lang="">
