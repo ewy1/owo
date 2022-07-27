@@ -17,6 +17,7 @@ const editor = new EditorView({
   parent: document.body,
   doc: text
 });
+editor.lineWrapping = true;
 
 document.querySelector("#save").addEventListener("click", () => {
   const payload = {
