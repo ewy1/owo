@@ -3,7 +3,7 @@ import {oneDarkTheme} from "@codemirror/theme-one-dark";
 import {javascript} from "@codemirror/lang-javascript";
 
 const text = document.querySelector("#raw").textContent.slice(5, -6);
-const extensions = [basicSetup];
+const extensions = [basicSetup, EditorView.lineWrapping];
 const filename = document.querySelector("header").textContent;
 
 if (matchMedia("prefers-color-scheme: dark"))
@@ -17,7 +17,6 @@ const editor = new EditorView({
   parent: document.body,
   doc: text
 });
-editor.lineWrapping = true;
 
 document.querySelector("#save").addEventListener("click", () => {
   const payload = {
