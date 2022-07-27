@@ -1,8 +1,14 @@
 <?php
-if ($_SERVER['REQUEST_URI'] === "/new")
-  include("./new/index.php")
-?>
+$config = require("./config.php");
 
+$target = $_SERVER["REQUEST_URI"];
+if ($target !== "/")
+  $contents = file_get_contents($config->pastePath . substr($target, 1));
+else
+  $contents = "curl -X POST -H 'Content-Type: application/json'
+    -d '{\"payload\": \"your text goes here\", \"base64\": false}'
+    https://".$config->host."new";
+?>
 <!doctype html>
 <html lang="">
 <head>
@@ -24,17 +30,11 @@ if ($_SERVER['REQUEST_URI'] === "/new")
 
   <link rel="stylesheet" href="/style.css" />
 
-  <script type="module" src="/owo.bundle.js"></script>
+  <script  type="module" src="/owo.bundle.js"></script>
 </head>
 <body>
 <noscript id="raw">
-<pre><?php
-  $config = require("./config.php");
-
-  $target = $_SERVER["REQUEST_URI"];
-  $contents = file_get_contents($config->pastePath . substr($target, 1));
-  echo $contents;
-?></pre>
+<pre><?= $contents ?></pre>
 </noscript>
 </body>
 </html>
