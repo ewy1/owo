@@ -13,6 +13,33 @@ pre {
 }
 
 header {
-  margin-left: 1em;
+  grid-template-columns: 2em auto min-content;
+  padding: 0 1em 0 0;
+  height: 3em;
+  width: 100vw;
+  display: grid;
+}
+
+header * {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  color: #ded5c8;
   font-size: 2em;
+}
+
+header button {
+  padding: 0 1em;
+  border-left: 4px solid #282c34;
+  background-color: #312f2f;
+}
+
+header button:hover {
+  color: white;
+  background-color: #282c34;
+  transition-property: background-color;
 }

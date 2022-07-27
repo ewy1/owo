@@ -3,6 +3,8 @@ $config = require("./config.php");
 
 $target = $_SERVER["REQUEST_URI"];
 
+$isNew = ($target === "/");
+
 if ($target === "/")
   $target = "/example";
 
@@ -17,7 +19,7 @@ else
 <html lang="">
 <head>
   <meta charset="utf-8">
-  <title>owo *notices ur <?= $title ?: "paste" ?>*</title>
+  <title>owo *notices ur <?= $title ?: "pasting" ?>*</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,16 +34,16 @@ else
 
   <meta name="theme-color" content="#fafafa">
 
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/style.css"/>
 
-  <script  type="module" src="/owo.bundle.js"></script>
+  <script type="module" src="/owo.bundle.js"></script>
 </head>
 <body>
 <header>
-  <?= $title ?: "owo" ?>
+  <div></div>
+  <input id="filename" placeholder="filename" type="text" value="<?= $title ?: "owo *notices ur pasting*" ?>"/>
+  <button id="save"><?= $isNew ? "Save" : "Update" ?></button>
 </header>
-<noscript id="raw">
-<pre><?= $contents ?></pre>
-</noscript>
+<noscript id="raw"><pre><?= $contents ?></pre></noscript>
 </body>
 </html>

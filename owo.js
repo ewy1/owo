@@ -1,8 +1,8 @@
 import {EditorView, basicSetup} from "codemirror"
-import { oneDarkTheme} from "@codemirror/theme-one-dark";
+import {oneDarkTheme} from "@codemirror/theme-one-dark";
 import {javascript} from "@codemirror/lang-javascript";
 
-const text = document.querySelector("#raw").textContent.slice(6, -7);
+const text = document.querySelector("#raw").textContent.slice(5, -6);
 const extensions = [basicSetup];
 const filename = document.querySelector("header").textContent;
 
@@ -16,6 +16,20 @@ const editor = new EditorView({
   extensions: extensions,
   parent: document.body,
   doc: text
-})
+});
+
+document.querySelector("#save").addEventListener("click", () => {
+  const payload = {
+    payload: btoa(editor.state.doc.toString()),
+    filename: document.querySelector("input#filename").value,
+    base64: true
+  };
+  fetch("/new", {
+    method: "POST",
+    body: JSON.stringify(payload)
+  }).then((result) => result.json().then((json) => {
+    window.location.href = json.target;
+  }));
+});
 
 editor.focus();
