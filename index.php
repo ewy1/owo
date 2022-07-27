@@ -1,3 +1,8 @@
+<?php
+if ($_SERVER['REQUEST_URI'] === "/new")
+  include("./new/index.php")
+?>
+
 <!doctype html>
 <html lang="">
 <head>

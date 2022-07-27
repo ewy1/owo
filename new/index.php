@@ -15,9 +15,16 @@ if ($payload = $data->payload) {
   if (!file_put_contents($config->pastePath . $filename, $payload))
     error("Failure writing to paste directory.", 500);
 
-  echo json_encode(["target" => $config->host . $filename], JSON_UNESCAPED_SLASHES);
+  success($config->host . $filename);
+
 } else {
   error("No payload provided");
+}
+
+function success(string $target) {
+  http_response_code(200);
+  echo json_encode(["target" => $target], JSON_UNESCAPED_SLASHES);
+  exit();
 }
 
 function error(string $message, int $httpResponseCode = 400) {
