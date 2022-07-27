@@ -6,7 +6,8 @@ $target = $_SERVER["REQUEST_URI"];
 if ($target !== "/")
   $target = "/example";
 
-$contents = file_get_contents($config->pastePath . substr($target, 1));
+$path = $config->pastePath . substr($target, 1);
+$contents = file_get_contents($path);
 ?>
 <!doctype html>
 <html lang="">
