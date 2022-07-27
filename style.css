@@ -9,8 +9,12 @@ body {
 
 pre {
   margin: 0;
-  padding: 3em;
+  padding: 2px 3em;
   border-top: solid 3px #282c34;
+}
+
+body > span {
+  background-color: #312f2f;
 }
 
 header {

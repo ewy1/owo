@@ -1,7 +1,7 @@
 import {EditorView, basicSetup} from "codemirror"
 import {javascript} from "@codemirror/lang-javascript";
 
-const text = document.querySelector("#raw").textContent.slice(5, -6);
+const text = document.querySelector("#value").value;
 const extensions = [basicSetup, EditorView.lineWrapping];
 const filename = document.querySelector("input#filename").value;
 
