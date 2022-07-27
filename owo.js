@@ -7,8 +7,10 @@ const extensions = [basicSetup];
 if (matchMedia("prefers-color-scheme: dark"))
   extensions.push(oneDarkTheme);
 
-new EditorView({
+const editor = new EditorView({
   extensions: extensions,
   parent: document.body,
   doc: text
 })
+
+editor.focus();
