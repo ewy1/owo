@@ -13,7 +13,13 @@ if ($payload = $data->payload) {
       error("Error decoding base64 payload");
 
   if (!file_put_contents($config->pastePath . $filename, $payload))
-    error("Failure writing to paste directory.", 500);
+    error("Failure writing payload to paste directory.", 500);
+
+  if ($data->filename) {
+    $fileNamePath = $config->pastePath . $filename . ".filename";
+    if (!file_put_contents($fileNamePath, $data->filename))
+      error("Failure writing filename to paste directory.", 500);
+  }
 
   success($config->host . $filename);
 
