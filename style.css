@@ -9,7 +9,8 @@ body {
 
 pre {
   margin: 0;
-  min-height: 100vh;
+  padding: 3em;
+  border-top: solid 3px #282c34;
 }
 
 header {

@@ -44,6 +44,6 @@ else
   <input id="filename" placeholder="filename" type="text" value="<?= $title ?: "owo *notices ur pasting*" ?>"/>
   <button id="save"><?= $isNew ? "Save" : "Update" ?></button>
 </header>
-<noscript id="raw"><pre><?= $contents ?></pre></noscript>
+<noscript id="raw"><pre><?= htmlentities($contents) ?></pre></noscript>
 </body>
 </html>
