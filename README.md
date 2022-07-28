@@ -4,7 +4,7 @@
  - Upload through website or through the command line
  - No reverse proxy required
  - Immutable pastes but still easily edit- and savable.
- - Javascript only required for editing
+ - Noscript compatible (excluding editing)
  - Syntax highlighting (currently only for js/ts)
 
 ## Upcoming features
