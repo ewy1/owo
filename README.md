@@ -9,6 +9,7 @@
 
 ## Upcoming features
  - Syntax highlighting for more languages
+ - Simplified setup
 
 ## Requirements
  - PHP 7.4+
