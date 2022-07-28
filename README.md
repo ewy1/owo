@@ -1,5 +1,5 @@
 # owo - an easy way to share text
-
+![example landing page](https://litter.catbox.moe/uohhqb.png)
 ## Features
  - Upload through website or through the command line
  - No reverse proxy required
