@@ -23,6 +23,7 @@ $selfdestruct = file_exists($path . ".selfdestruct");
 <!doctype html>
 <html lang="">
 <head>
+  <link rel="icon" href="data:,">
   <meta charset="utf-8">
   <title>owo *notices ur <?= $title ?: "pasting" ?>*</title>
   <meta name="description"
@@ -60,7 +61,7 @@ if ($selfdestruct && $_SERVER['REQUEST_METHOD'] !== 'POST') { ?>
     <input <?=$selfdestruct ? "disabled" : "" ?>
            id="filename" placeholder="filename" type="text" value="<?= $title ?: "owo *notices ur pasting*" ?>"/>
     <?php if (!$selfdestruct) { ?>
-      <a title="This post will self destruct once opened.">
+      <a title="This post will self destruct once viewed.">
         <input class="selfdestruct-toggle" type="checkbox"
                name="selfdestruct"></a>
       <button id="save"><?= $isNew ? "Save" : "Update" ?></button>
