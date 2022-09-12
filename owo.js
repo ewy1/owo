@@ -1,9 +1,9 @@
 import {EditorView, basicSetup} from "codemirror"
 import {javascript} from "@codemirror/lang-javascript";
 
-const text = document.querySelector("#value").value;
+const text = document.querySelector("#value")?.value;
 const extensions = [basicSetup, EditorView.lineWrapping];
-const filename = document.querySelector("input#filename").value;
+const filename = document.querySelector("input#filename")?.value;
 
 const darkTheme = EditorView.theme({
   "&": {
@@ -55,12 +55,12 @@ const editor = new EditorView({
   doc: text
 });
 
-document.querySelector("#save").addEventListener("click", () => {
+document.querySelector("#save")?.addEventListener("click", () => {
   const payload = {
     payload: btoa(editor.state.doc.toString()),
-    filename: document.querySelector("input#filename").value,
+    filename: document.querySelector("input#filename")?.value,
     base64: true,
-    selfDestruct: document.querySelector("input.selfdestruct-toggle").checked
+    selfDestruct: document.querySelector("input.selfdestruct-toggle")?.checked
   };
   fetch("/new", {
     method: "POST",
