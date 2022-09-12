@@ -35,13 +35,8 @@ $selfdestruct = file_exists($path . ".selfdestruct");
   <meta property="og:image" content="">
 
   <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
   <meta name="theme-color" content="#fafafa">
-
   <link rel="stylesheet" href="/style.css"/>
-
   <script type="module" src="/owo.bundle.js"></script>
 </head>
 <body>
