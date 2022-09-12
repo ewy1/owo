@@ -55,12 +55,12 @@ const editor = new EditorView({
   doc: text
 });
 
-document.querySelector("#save").addEventListener("click", () => {
+document.querySelector("#save")?.addEventListener("click", () => {
   const payload = {
     payload: btoa(editor.state.doc.toString()),
-    filename: document.querySelector("input#filename").value,
+    filename: document.querySelector("input#filename")?.value,
     base64: true,
-    selfDestruct: document.querySelector("input.selfdestruct-toggle").checked
+    selfDestruct: document.querySelector("input.selfdestruct-toggle")?.checked
   };
   fetch("/new", {
     method: "POST",
