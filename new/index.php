@@ -21,6 +21,12 @@ if ($payload = $data->payload) {
       error("Failure writing filename to paste directory.", 500);
   }
 
+  if ($data->selfDestruct) {
+    $destructPath = $config->pastePath . $filename . ".selfdestruct";
+    if (!file_put_contents($destructPath, "1"))
+      error("Failure writing filename to paste directory.", 500);
+  }
+
   success($config->host . $filename);
 
 } else {

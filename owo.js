@@ -59,7 +59,8 @@ document.querySelector("#save").addEventListener("click", () => {
   const payload = {
     payload: btoa(editor.state.doc.toString()),
     filename: document.querySelector("input#filename").value,
-    base64: true
+    base64: true,
+    selfDestruct: document.querySelector("input.selfdestruct-toggle").checked
   };
   fetch("/new", {
     method: "POST",
