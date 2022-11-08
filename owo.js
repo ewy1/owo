@@ -68,8 +68,8 @@ document.querySelector("#save")?.addEventListener("click", () => {
     method: "POST",
     body: JSON.stringify(payload)
   }).then((result) => {
-    navigator.clipboard.writeText(json.target);
     result.json().then((json) => {
+      navigator.clipboard.writeText(json.target);
       window.location.href = json.target;
     })
   });
