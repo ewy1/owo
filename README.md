@@ -2,14 +2,14 @@
 ![example landing page](https://litter.catbox.moe/uohhqb.png)
 ## Features
  - Upload through website or through the command line
- - No reverse proxy required
+ - Destructible pastes
+ - Rich embeds
+ - Simple file based backend
+ - No overhead
  - Immutable pastes but still easily edit- and savable.
  - Noscript compatible (excluding editing)
- - Syntax highlighting (currently only for js/ts)
-
-## Upcoming features
- - Syntax highlighting for more languages
- - Simplified setup
+ - Syntax highlighting
+   - currently only for js/ts
 
 ## Requirements
  - PHP 7.4+
@@ -18,9 +18,9 @@
 
 ## Setup
 1. Clone repository into your webhost
-2. `cp config.deafult.php config.php` and edit the configuration
+2. `cp config.default.php config.php` and edit the configuration
 3. Ensure your configured directories exist
-4. Fill text file $pasteDir/raw/example with your home page text
+4. Fill text file `$pasteDir/raw/example` with your home page text - my default is a shell script to submit a paste
 5. `npm install` to install the js dependencies
 6. `rollup --config ./rollup.config.js` to bundle the js
 7. Add NGINX configuration:
