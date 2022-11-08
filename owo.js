@@ -5,7 +5,7 @@ import {javascript} from "@codemirror/lang-javascript";
 
 const text = document.querySelector("#value")?.value;
 const extensions = [basicSetup, EditorView.lineWrapping];
-const filename = document.querySelector("input#filename")?.value;
+const filename = document.querySelector("input#filename")?.value ?? "";
 
 const darkTheme = EditorView.theme({
   "&": {

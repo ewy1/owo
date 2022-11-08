@@ -59,7 +59,7 @@ if ($selfdestruct && $_SERVER['REQUEST_METHOD'] !== 'POST') { ?>
       <a title="This post will self destruct once viewed.">
         <input class="selfdestruct-toggle" type="checkbox"
                name="selfdestruct"></a>
-      <button id="save"><?= $isNew ? "Save" : "Update" ?></button>
+      <a title="The URL will be automatically sent to your clipboard upon saving a paste."><button id="save"><?= $isNew ? "Save" : "Update" ?></button></a>
     <?php } ?>
   </header>
   <noscript>
