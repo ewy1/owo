@@ -1,5 +1,5 @@
 # owo - an easy way to share text
-![example landing page](https://files.catbox.moe/pvrul3.png)
+![example landing page](https://files.catbox.moe/pvrul3.png\)
 ## Features
  - Upload through website or through the command line
  - Destructible pastes
@@ -24,6 +24,7 @@
 5. `npm install` to install the js dependencies
 6. `rollup --config ./rollup.config.js` to bundle the js
 7. Add NGINX configuration:
+    - An example is included (`nginx-config`)
     - Static files must be served normally (/, /new, /raw, /owo.js, /style.css, favicon, etc.)
     - Redirect all other /* calls to index.php
 

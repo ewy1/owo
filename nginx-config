@@ -1,0 +1,24 @@
+server {
+        server_name owo.ewy.one;
+        root /var/www/owo;
+
+        # Match the endpoints / and /new to the respective php scripts
+        location ~ ^/(/|/new)/ {
+                include fastcgi_params;
+                fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
+                fastcgi_index index.php;
+                fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+                try_files $uri /index.php;
+        }
+
+        # Match /raw to the saved files served as text
+        location /raw/ {
+                try_files $uri $uri =404;
+                types { } default_type "text/plain; charset=utf-8";
+        }
+
+        # Match the miscellaneous assets to the files
+        location ~ ^/(/owo.bundle.js|/style.css|/new) {
+                try_files $uri $uri =404;
+        }
+}
