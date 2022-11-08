@@ -1,5 +1,5 @@
 # owo - an easy way to share text
-![example landing page](https://litter.catbox.moe/uohhqb.png)
+![example landing page](https://files.catbox.moe/pvrul3.png)
 ## Features
  - Upload through website or through the command line
  - Destructible pastes
