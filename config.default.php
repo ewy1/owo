@@ -4,5 +4,6 @@ $config = new Config();
 
 $config->host = "http://localhost/";
 $config->pastePath = "/tmp/owo/";
+$config->defaultTitle = "owo *notices ur pasting*";
 
 return $config;

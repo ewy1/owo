@@ -10,4 +10,9 @@ class Config {
    * @var string Path where the raw files will be stored, with trailing path separator.
    */
   public string $pastePath;
+
+  /**
+   * @var string The default title of a paste and the tab.
+   */
+  public string $defaultTitle;
 }
