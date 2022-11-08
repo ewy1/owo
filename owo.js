@@ -1,3 +1,5 @@
+// noinspection JSNonASCIINames
+
 import {EditorView, basicSetup} from "codemirror"
 import {javascript} from "@codemirror/lang-javascript";
 
@@ -65,9 +67,13 @@ document.querySelector("#save")?.addEventListener("click", () => {
   fetch("/new", {
     method: "POST",
     body: JSON.stringify(payload)
-  }).then((result) => result.json().then((json) => {
-    window.location.href = json.target;
-  }));
+  }).then((result) => {
+    navigator.clipboard.writeText(json.target);
+    result.json().then((json) => {
+      window.location.href = json.target;
+    })
+  });
+
 });
 
 editor.focus();
