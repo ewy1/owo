@@ -4,4 +4,5 @@ dist
 config.php
 .idea
 *.bundle.js
+*.min.*
 ./raw
