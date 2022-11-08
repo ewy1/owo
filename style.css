@@ -34,7 +34,7 @@ header * {
   height: 100%;
   width: 100%;
   color: #ded5c8;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 header button {
@@ -60,5 +60,5 @@ main {
 
 main input {
   width: 100%;
-  font-size: 2em;
+  font-size: 1.5em;
 }
